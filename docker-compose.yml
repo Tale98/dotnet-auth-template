@@ -1,0 +1,10 @@
+services:
+  auth_db:
+    image: postgres:latest
+    container_name: auth_postgres
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: authdb
+    ports:
+      - "5432:5432"
