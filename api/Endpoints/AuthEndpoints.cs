@@ -10,10 +10,8 @@ namespace Api.Endpoints;
 
 public static class AuthEndpoints
 {
-    // เมธอดหลักสำหรับ Map Route ทั้งหมดของ Auth
     public static void MapAuthEndpoints(this IEndpointRouteBuilder app)
     {
-        // ใช้ MapGroup เพื่อกำหนด Prefix "/auth" ไว้ที่จุดเดียว
         var group = app.MapGroup("/auth");
 
         group.MapPost("/register", RegisterHandler)
@@ -27,7 +25,6 @@ public static class AuthEndpoints
         group.MapPost("/logout", LogoutHandler);
     }
 
-    // --- แยก Handler ออกเป็นเมธอดส่วนตัว (Private Methods) เพื่อความสะอาด ---
 
     private static async Task<IResult> RegisterHandler(UserRegisterRequest request, AppDbContext dbContext)
     {
