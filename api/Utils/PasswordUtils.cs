@@ -1,4 +1,4 @@
-namespace Api.Utils;
+namespace Api.Utils.Password;
 
 public static class PasswordUtils
 {
